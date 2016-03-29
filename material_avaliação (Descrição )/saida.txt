@@ -1,0 +1,636 @@
+
+Welcome to Super Trunfo! copyright DIMAp/IMD, 2016.
+# of players: 3
+# of cards per player: 4
+
+>>> The deck of ST cards read from file: 
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    F2  | Airbus A300B4-605R             | American - USA               | 1972     | 897   | 6670  | 54.08  | 44.84   
+    H1  | Lockheed L-1011 TriStar 500    | LTU - Germany                | 1978     | 960   | 11260 | 50.05  | 50.09   
+    J2  | Boeing 787-8                   | Noeing - USA                 | 2007     | 1041  | 15700 | 57.0   | 60.0    
+    E2  | Boeing 737-3L9                 | Vasp - Brazil                | 1984     | 908   | 6300  | 33.4   | 28.88   
+    ST  | BAC 111-208AL One Eleven       | Aer Lingus - Ireland         | 1963     | 870   | 1410  | 28.5   | 26.97   
+    A1  | Boeing 737-2C3/Adv             | Cruzeiro - Brazil            | 1967     | 927   | 4260  | 30.53  | 28.35   
+    C1  | Douglas DC-3A                  | Continental - USA            | 1935     | 266   | 2420  | 19.66  | 28.96   
+    D3  | Embraer EMB-110 Bandeirante    | Skydrift - England           | 1968     | 417   | 2000  | 15.10  | 15.33   
+    H3  | McDonnell Douglas MD-11        | Varig - Brazil               | 1990     | 945   | 12633 | 61.62  | 51.66   
+    B1  | Boeing 737-75B                 | Gol - Brazil                 | 1996     | 961   | 2852  | 33.63  | 34.31   
+    B2  | Boeing 727-22                  | United - USA                 | 1963     | 960   | 5000  | 40.59  | 32.92   
+    G2  | Airbus A310-304/ET             | Air Transat - Canada         | 1982     | 897   | 9580  | 46.66  | 43.89   
+    D4  | Fokker 100                     | DBA - Germany                | 1986     | 845   | 3167  | 35.53  | 28.08   
+    G4  | Boeing 747SP-38                | Qantas - Australia           | 1975     | 980   | 15400 | 56.31  | 59.64   
+    B3  | Hawker Siddeley HS-748 Srs2A   | West Air Sweden - Sweden     | 1960     | 452   | 3130  | 30.02  | 20.42   
+    J3  | Airbus A350-900                | TAM - Brazil                 | 2008     | 1029  | 13890 | 65.2   | 61.1    
+    C4  | Embraer EMB-145EP              | BMI - England                | 1983     | 833   | 2445  | 29.87  | 20.04   
+    H4  | Airbus A340-642                | Iberia - Spain               | 2001     | 945   | 13890 | 75.3   | 63.7    
+    B4  | Fokker F-28 Fellowship 4000    | Scandinavian - Sacandinavian | 1967     | 843   | 2085  | 29.61  | 25.07   
+    A4  | Airbus A318-111                | Air France - France          | 2002     | 1004  | 2780  | 31.44  | 34.09   
+    F1  | Boeing 707-131                 | TWA - USA                    | 1957     | 1000  | 8485  | 44.07  | 39.9    
+    F3  | Douglas DC-8-51                | Aeromexico - Mexico          | 1958     | 933   | 11260 | 45.87  | 43.51   
+    D1  | Hawker Siddeley 121 Trident 3B | BEA - UK                     | 1962     | 936   | 3060  | 40.0   | 28.9    
+    G3  | Airbus A330-343X               | My Travel - UK               | 1992     | 880   | 10185 | 63.69  | 60.30   
+    C2  | Lockheed L-188A Electra        | Varig - Brazil               | 1957     | 652   | 4023  | 31.81  | 30.18   
+    D2  | Fokker 50                      | TAM - Brazil                 | 1985     | 532   | 3017  | 25.25  | 29.0    
+    G1  | Lockheed L-749A Constellation  | KLM - Netherland             | 1943     | 505   | 7660  | 34.6   | 37.49   
+    E4  | Boeing 757-236                 | British Airways - England    | 1982     | 914   | 7277  | 47.32  | 38.05   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+>>> Deck size is: 40
+
+
+
+====================================================================================================
+>>> Round #1
+
+    Players still playing: 3
+    Current player is : "Player #2"
+    Attribute chosen: "SPEED".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 4 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 4 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #1" still active, have 4 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #2" ***
+
+
+
+====================================================================================================
+>>> Round #2
+
+    Players still playing: 3
+    Current player is : "Player #2"
+    Attribute chosen: "RANGE".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 6 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 3 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #1" still active, have 3 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #3" ***
+
+
+
+====================================================================================================
+>>> Round #3
+
+    Players still playing: 3
+    Current player is : "Player #3"
+    Attribute chosen: "RANGE".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 5 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 5 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #1" still active, have 2 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #2" ***
+
+
+
+====================================================================================================
+>>> Round #4
+
+    Players still playing: 3
+    Current player is : "Player #2"
+    Attribute chosen: "WINGSPAN".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 7 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 4 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #1" still active, have 1 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #3" ***
+
+
+
+====================================================================================================
+>>> Round #5
+
+    Players still playing: 2
+    Current player is : "Player #3"
+    Attribute chosen: "LENGTH".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 6 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 6 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #2" ***
+
+
+
+====================================================================================================
+>>> Round #6
+
+    Players still playing: 2
+    Current player is : "Player #2"
+    Attribute chosen: "SPEED".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 7 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 5 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #2" ***
+
+
+
+====================================================================================================
+>>> Round #7
+
+    Players still playing: 2
+    Current player is : "Player #2"
+    Attribute chosen: "RANGE".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 8 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 4 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #2" ***
+
+
+
+====================================================================================================
+>>> Round #8
+
+    Players still playing: 2
+    Current player is : "Player #2"
+    Attribute chosen: "LENGTH".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 9 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 3 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #2" ***
+
+
+
+====================================================================================================
+>>> Round #9
+
+    Players still playing: 2
+    Current player is : "Player #2"
+    Attribute chosen: "LENGTH".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 10 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 2 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #2" ***
+
+
+
+====================================================================================================
+>>> Round #10
+
+    Players still playing: 2
+    Current player is : "Player #2"
+    Attribute chosen: "WINGSPAN".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 11 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 1 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #3" ***
+
+
+
+====================================================================================================
+>>> Round #11
+
+    Players still playing: 2
+    Current player is : "Player #3"
+    Attribute chosen: "SPEED".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 10 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 2 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #2" ***
+
+
+
+====================================================================================================
+>>> Round #12
+
+    Players still playing: 2
+    Current player is : "Player #2"
+    Attribute chosen: "RANGE".
+
+    Players' hand at the BEGINNING of the round:
+
+    Player "Player #2" still active, have 11 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    C3  | Embraer EMB120 Brasilia        | GoAir CityLink - Canada      | 1983     | 574   | 1020  | 20.0   | 19.78   
+    J1  | Airbus 380-841                 | Airbus Industries - EU       | 2005     | 1078  | 14800 | 72.75  | 79.8    
+    E3  | Airbus A321-131                | Lufthansa - Germany          | 1996     | 903   | 4352  | 44.51  | 34.09   
+    H2  | McDonnell Douglas DC-10-30     | Viasa - Venezuela            | 1970     | 908   | 12055 | 55.5   | 50.4    
+    E1  | Boeing 727-222/Adv             | Pan Am - USA                 | 1967     | 953   | 4450  | 46.69  | 32.92   
+    I4  | Boeing 7770223/ER              | American - USA               | 1994     | 905   | 14316 | 63.73  | 60.93   
+    I2  | Boeing 747-286BM               | IranAir - Iran               | 1970     | 907   | 12778 | 70.66  | 59.64   
+    I1  | Boeing 747-430M                | Lufthansa - Germany          | 1988     | 939   | 13491 | 70.67  | 64.44   
+    I3  | Boeing 777-35E/ER              | Eva Air - Taiwan             | 1997     | 893   | 13427 | 73.86  | 60.93   
+    A3  | Douglas DC-9-14                | Finnair - Finland            | 1965     | 903   | 1055  | 31.82  | 27.25   
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    Player "Player #3" still active, have 1 cards in hand, and they are:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+
+    Cards put down on the table for this round:
+    ====+================================+==============================+==========+=======+=======+========+=========
+    ID  | NAME                           | COMPANY                      | MFR_YEAR | SPEED | RANGE | LENGTH | WINGSPAN
+    ====+================================+==============================+==========+=======+=======+========+=========
+    F4  | Boeing 767-306/ER              | KLM - Netherland             | 1986     | 900   | 10880 | 54.94  | 47.57   
+    J4  | Embraer ERJ-170-100DR          | LOP - Poland                 | 2002     | 870   | 3889  | 29.9   | 26.0    
+    ----+--------------------------------+------------------------------+----------+-------+-------+--------+---------
+
+    *** The winner of this round is player "Player #2" ***
+
+
+>>> The winner after 12 rounds played is: "Player #2"
+
+>>> Normal exiting...
